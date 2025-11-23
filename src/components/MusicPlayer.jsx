@@ -1,18 +1,37 @@
-import React, { forwardRef } from "react";
-import { Music } from "lucide-react";
+import React, { useEffect, forwardRef } from "react";
 
 const MusicPlayer = forwardRef((_, ref) => {
-  return (
-    <div className="fixed bottom-6 right-6 z-50">
-      <button
-        onClick={() => ref.current?.paused ? ref.current.play() : ref.current.pause()}
-        className="p-4 bg-pink-600 text-white rounded-full shadow-lg hover:bg-pink-700 transition"
-      >
-        <Music className="w-6 h-6" />
-      </button>
+  useEffect(() => {
+    const audio = ref.current;
 
-      <audio ref={ref} loop src="/src/assets/music.mp3" />
-    </div>
+    if (audio) {
+      const playAudio = () => {
+        audio.play().catch(() => {});
+      };
+
+      // Coba autoplay ketika komponen muncul
+      playAudio();
+
+      // Jika autoplay di-block browser → play ketika user scroll
+      window.addEventListener("touchstart", playAudio);
+      window.addEventListener("click", playAudio);
+      window.addEventListener("scroll", playAudio);
+
+      return () => {
+        window.removeEventListener("touchstart", playAudio);
+        window.removeEventListener("click", playAudio);
+        window.removeEventListener("scroll", playAudio);
+      };
+    }
+  }, [ref]);
+
+  return (
+    <audio
+      ref={ref}
+      loop
+      src="/src/assets/music.mp3" // ganti dengan link mp3 jika sudah ada
+      style={{ display: "none" }} // tersembunyi
+    />
   );
 });
 
