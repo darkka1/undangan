@@ -1,5 +1,4 @@
 import React from "react";
-import heroImg from "@assets/hero.jpg"; // pakai alias atau relative import
 
 export default function Hero() {
   return (
@@ -9,7 +8,7 @@ export default function Hero() {
     >
       <div className="w-40 h-40 mb-6 rounded-full shadow-lg overflow-hidden border-4 border-pink-300">
         <img
-          src={heroImg}
+          src="https://i.imgur.com/W3iKjTX.jpeg"
           alt="Gilang & Intan"
           className="w-full h-full object-cover"
         />
