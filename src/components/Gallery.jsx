@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Gallery() {
   const photos = [
-    "/src/assets/placeholder-couple.jpg",
+    "/src/assets/gallery-1.jpg",
     "/src/assets/placeholder-couple.jpg",
     "/src/assets/placeholder-couple.jpg",
     "/src/assets/placeholder-couple.jpg",

@@ -14,7 +14,7 @@ export default function Cover({ onOpen }) {
         <h2 className="text-4xl font-serif font-semibold text-gray-800 mb-2">
           Gilang & Intan
         </h2>
-        <p className="text-gray-600 mb-8">Sabtu, 15 Juni 2025</p>
+        <p className="text-gray-600 mb-8">Minggu, 31 Mei 2026</p>
 
         <button
           onClick={onOpen}
