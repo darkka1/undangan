@@ -1,35 +1,21 @@
-import React, { useEffect, forwardRef } from "react";
+import React, { forwardRef, useEffect } from "react";
 
 const MusicPlayer = forwardRef((_, ref) => {
   useEffect(() => {
-    const audio = ref.current;
-    if (!audio) return;
-
-    audio.volume = 1;
-
-    const playAudio = () => {
-      audio.play().catch(() => {});
+    const playOnInteract = () => {
+      ref.current?.play();
+      document.removeEventListener("click", playOnInteract);
     };
 
-    playAudio();
-
-    document.addEventListener("click", playAudio);
-    document.addEventListener("touchstart", playAudio);
-    document.addEventListener("scroll", playAudio);
-
-    return () => {
-      document.removeEventListener("click", playAudio);
-      document.removeEventListener("touchstart", playAudio);
-      document.removeEventListener("scroll", playAudio);
-    };
+    document.addEventListener("click", playOnInteract);
   }, [ref]);
 
   return (
     <audio
       ref={ref}
       loop
-      src="/music.mp3" // pastikan file di folder public
-      style={{ display: "none" }}
+      autoPlay
+      src="https://g.top4top.io/m_3614sjuj11.mp3"
     />
   );
 });
