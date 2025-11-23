@@ -1,4 +1,5 @@
 import React from "react";
+import heroImg from "@assets/hero.jpg"; // pakai alias atau relative import
 
 export default function Hero() {
   return (
@@ -6,10 +7,9 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center text-center section-padding bg-gradient-to-b from-white to-pink-50"
     >
-      {/* Placeholder foto — nanti ganti pakai foto kamu */}
       <div className="w-40 h-40 mb-6 rounded-full shadow-lg overflow-hidden border-4 border-pink-300">
         <img
-          src="/src/assets/gallery-1.jpg"
+          src={heroImg}
           alt="Gilang & Intan"
           className="w-full h-full object-cover"
         />
