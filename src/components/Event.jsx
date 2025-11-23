@@ -16,7 +16,7 @@ export default function Event() {
           Pernikahan & Resepsi
         </h3>
 
-        <p className="text-gray-600">Sabtu, 15 Juni 2025</p>
+        <p className="text-gray-600">Minggu, 31 Mei 2026</p>
         <p className="text-gray-600">Pukul 11.00 WIB - Selesai</p>
         <p className="text-gray-700 font-medium mt-2">
           Gedung Cinta Abadi, Bandung

@@ -9,7 +9,7 @@ export default function Hero() {
       {/* Placeholder foto — nanti ganti pakai foto kamu */}
       <div className="w-40 h-40 mb-6 rounded-full shadow-lg overflow-hidden border-4 border-pink-300">
         <img
-          src="/src/assets/placeholder-couple.jpg"
+          src="/src/assets/gallery-1.jpg"
           alt="Gilang & Intan"
           className="w-full h-full object-cover"
         />
